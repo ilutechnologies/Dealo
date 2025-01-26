@@ -1,19 +1,35 @@
-import React from "react";
-import videoSrc from '../assets/videos/Dealo_hero_video_preview 01.mp4';
+import React, { useState } from "react";
+import videoSrc from '../assets/videos/Dealo_hero_video_preview 01.m4v';
+import Sidebar from './Sidebar';
 
 const Hero = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleSecondaryButtonClick = () => {
+    setIsSidebarOpen(true);
+  };
+
+  const handleCloseSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
-    <div className="video-container relative w-full h-screen overflow-hidden py-4">
-      <div className="relative w-full h-full">
-        <div className="w-full h-full ">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source src={videoSrc} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+    <div className="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden py-4">
+      <div className="relative w-full max-w-4xl h-auto">
+        <video autoPlay loop muted playsInline className="w-full h-auto object-cover">
+          <source src={videoSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
-      {/* <div className="content-overlay absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center text-white bg-black bg-opacity-80">
-      </div> */}
+      <div className="mt-8 flex gap-4">
+        <button className="px-6 py-2 bg-blue-500 text-white font-bold rounded-full hover:bg-blue-700 transition">
+          Primary Button
+        </button>
+        <button onClick={handleSecondaryButtonClick} className="px-6 py-2 bg-gray-500 text-white font-bold rounded-full hover:bg-gray-700 transition">
+          Secondary Button
+        </button>
+      </div>
+      <Sidebar isOpen={isSidebarOpen} onClose={handleCloseSidebar} />
     </div>
   );
 };
