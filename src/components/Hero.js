@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import videoSrc from '../assets/videos/Dealo_hero_video_preview 01.m4v';
+import videoSrc from '../assets/videos/Dealo Web Video_Final_ HD.m4v';
 import Sidebar from './Sidebar';
 
 const Hero = () => {
@@ -14,14 +14,14 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full h-screen flex flex-col justify-center items-center overflow-hidden py-4">
-      <div className="relative w-full max-w-4xl h-auto">
+    <div className="relative w-full h-screen flex flex-col  items-left overflow-hidden py-4">
+      <div className="px-4 py-2 container mx-auto relative h-auto">
         <video autoPlay loop muted playsInline className="w-full h-auto object-cover">
           <source src={videoSrc} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="mt-8 flex gap-4">
+      <div className="mt-8 justify-center flex gap-4">
         <button className="px-6 py-2 bg-blue-500 text-white font-bold rounded-full hover:bg-blue-700 transition">
           Primary Button
         </button>
