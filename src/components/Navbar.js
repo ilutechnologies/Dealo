@@ -58,7 +58,7 @@ const Navbar = () => {
               </div>
   
               {/* Desktop Menu */}
-              <div className="hidden md:flex text-gray font-bold gap-6 justify-center flex-grow">
+              <div className="hidden md:flex text-gray gap-6 justify-center flex-grow">
                 <a href="/" className="hover:text-cyan-400 transition">
                   Home
                 </a>
@@ -87,7 +87,7 @@ const Navbar = () => {
                     placeholder="Search..."
                     className="px-4 py-1 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg placeholder-gray rounded-lg"
                   />
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray h-4 w-4" />
+                  <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray h-4 w-4" />
                 </div>
   
                 {/* Mobile Menu Button */}
