@@ -1,18 +1,36 @@
 import React from 'react';
-import Image from '../../assets/images/Trading-Solutions.jpg'
+import Image from '../../assets/images/Freightforwardingsolutions.jpg'
+import { useEffect } from "react";
+import Layout from '../Layout';
 
 const Freight = () => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const iframe = document.getElementById("freight-form");
+      if (iframe && iframe.contentWindow) {
+        const iframeDoc = iframe.contentWindow.document;
+        
+        // Hide unwanted elements (inspect the elements to get correct selectors)
+        iframeDoc.querySelector(".navbar")?.remove();
+        iframeDoc.querySelector(".footer")?.remove();
+        iframeDoc.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+    }, 2000); // Delay to allow iframe to load
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
+    <Layout>
     <div className="flex flex-col items-center py-12 bg-white">
       <h1 className="text-2xl font-semibold mb-6 text-left">Freight Forwarding Solutions</h1>
-      <h2 className="text-left text-xl font-semibold mb-6">Your one-stop freight forward solutions company!</h2>
-      <div className="relative w-full">
-        <img
-          src={Image}  
-          alt="Trading Solutions Map"
-          className="w-full rounded-lg shadow-lg"
-        />
-      </div>
+        <h2 className="text-left text-xl font-semibold mb-6">Your one-stop freight forward solutions company!</h2>
+        <div className="relative w-full">
+          <img
+            src={Image}  
+            alt="Trading Solutions Map"
+            className="w-full rounded-lg shadow-lg"
+          />
+        </div>
 
 
         <div className="flex flex-col py-12 bg-white">
@@ -42,10 +60,19 @@ const Freight = () => {
             A-to-B transport service. Every step of the process is managed under strict, meticulous supervision, 
             guaranteeing timely and secure deliveries.
             </p>
+            <div className="flex flex-col py-12 bg-white">
+            <iframe
+              id="freight-form"
+              src="http://173.212.195.167:8080/freight-request-form"
+              style={{ border: "none", width: "100%", height: "500px", overflow: "hidden" }}
+              title="Freight Request Form"
+            ></iframe>
+        </div>
         </div>
     </div>
-
-  );
+    </Layout>
+    );
 };
+
 
 export default Freight;

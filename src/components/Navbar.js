@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
+// import Preloader from './Preloader';  
 import { 
   Globe, 
   Truck, 
   Package, 
   Shield, 
   Flag, 
-  Search,
   Menu,
   X
 } from 'lucide-react';
 import logo from '../assets/images/dealo-logo.png';
+import SearchComponent from './Search';
 
 const Navbar = () => {
     const [isSolutionsExpanded, setIsSolutionsExpanded] = useState(false);
@@ -47,6 +48,17 @@ const Navbar = () => {
         { href: "/racing-solutions", icon: Flag, text: "Racing Solutions" },
     ];
 
+      // const [isNavigating, setIsNavigating] = useState(false);
+      // const router = useRouter();
+    
+      // const handleNavigation = (path) => {
+      //   setIsNavigating(true);
+      //   setTimeout(() => {
+      //     router.push(path);
+      //     setIsNavigating(false);
+      //   }, 800); // Sync with preloader duration
+      // };
+
     return (
         <>
         <nav className="navbar justify-center fixed w-full z-50 bg-white bg-opacity-10 backdrop-filter backdrop-blur-xl transition-all duration-300">
@@ -54,7 +66,9 @@ const Navbar = () => {
             <div className="flex justify-between items-center">
               {/* Logo */}
               <div className="text-gray text-2xl font-bold">
-                <img src={logo} alt="Logo" className="h-8" />
+                <a href='/'>
+                  <img src={logo} alt="Logo" className="h-8" />
+                </a>
               </div>
   
               {/* Desktop Menu */}
@@ -82,12 +96,7 @@ const Navbar = () => {
               {/* Search and Mobile Menu Button */}
               <div className="flex items-center gap-4">
                 <div className="relative hidden md:block">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="px-4 py-1 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg placeholder-gray rounded-lg"
-                  />
-                  <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray h-4 w-4" />
+                  <SearchComponent />
                 </div>
   
                 {/* Mobile Menu Button */}
@@ -132,7 +141,7 @@ const Navbar = () => {
                     {/* Mobile Menu */}
                     <div 
                         className={`
-                            md:hidden fixed left-0 w-full bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg
+                            md:hidden fixed left-0 w-full bg-gray-200 bg-opacity-1 backdrop-filter backdrop-blur-lg
                             transition-all duration-300 ease-in-out
                             ${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}
                         `}
@@ -159,12 +168,7 @@ const Navbar = () => {
                                 
                                 {/* Mobile Search */}
                                 <div className="relative mt-4">
-                                    <input
-                                        type="text"
-                                        placeholder="Search..."
-                                        className="w-full px-4 py-2 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg placeholder-gray rounded-lg"
-                                    />
-                                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray h-4 w-4" />
+                                  <SearchComponent />
                                 </div>
                             </div>
                         </div>

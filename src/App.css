@@ -11,4 +11,23 @@
   html {
     scrollbar-width: none;
   }
-  
+  iframe {
+    border: none;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+@media screen and (max-width: 768px) {
+    #HeroVideo {
+      padding: 0;
+      width: 100%;
+    }
+    #HeroVideo video{
+      width: 100%;
+    }
+    #HeroButton{
+      position: absolute;
+      bottom: 4;
+      right: 4;
+    }
+  }

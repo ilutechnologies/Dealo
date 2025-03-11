@@ -1,10 +1,11 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import Layout from './Layout';
 
 const Home = () => (
-    <div className="home">
-        <Hero />
-    </div>
+    <Layout>
+      <Hero />
+    </Layout>
 );
 
 export default Home;

@@ -1,8 +1,10 @@
 import React from 'react';
 import Image from '../../assets/images/Trading-Solutions.jpg'
+import Layout from '../Layout';
 
 const Trading = () => {
   return (
+    <Layout>
     <div className="flex flex-col items-center text-center py-12 bg-white">
       <h2 className="text-2xl font-semibold mb-6">Trading Solutions</h2>
       <div className="relative w-full">
@@ -18,6 +20,7 @@ const Trading = () => {
         selection, all in just a matter of minutes.
       </p>
     </div>
+    </Layout>
   );
 };
 
