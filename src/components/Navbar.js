@@ -73,7 +73,7 @@ const Navbar = () => {
   
               {/* Desktop Menu */}
               <div className="hidden md:flex text-gray gap-6 justify-center flex-grow">
-                <a href="/" className="hover:text-cyan-400 transition">
+                <a href="/" className="hover:text-amber-400 transition">
                   Home
                 </a>
                 <div
@@ -81,14 +81,14 @@ const Navbar = () => {
                   onMouseEnter={handleMenuEnter}
                   onMouseLeave={handleMenuLeave}
                 >
-                  <button className="hover:text-cyan-400 transition">
+                  <button className="hover:text-amber-400 transition">
                     Solutions
                   </button>
                 </div>
-                <a href="/dealo-tech" className="hover:text-cyan-400 transition">
+                <a href="/dealo-tech" className="hover:text-amber-400 transition">
                   Dealo Tech
                 </a>
-                <a href="/partnerships" className="hover:text-cyan-400 transition">
+                <a href="/partnerships" className="hover:text-amber-400 transition">
                   Partnerships
                 </a>
               </div>
@@ -101,7 +101,7 @@ const Navbar = () => {
   
                 {/* Mobile Menu Button */}
                 <button
-                  className="md:hidden text-gray hover:text-cyan-400 transition"
+                  className="md:hidden text-gray hover:text-amber-400 transition"
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                   {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -127,7 +127,7 @@ const Navbar = () => {
                     <a
                       key={solution.href}
                       href={solution.href}
-                      className="flex flex-col items-center p-4 hover:bg-cyan-400 hover:bg-opacity-20 transition rounded-lg"
+                      className="flex flex-col items-center p-4 hover:bg-amber-400 hover:bg-opacity-20 transition rounded-lg"
                     >
                       <solution.icon className="h-6 w-6 mb-2" />
                       <p className="text-center text-sm">{solution.text}</p>
@@ -149,22 +149,22 @@ const Navbar = () => {
                     >
                         <div className="container mx-auto px-4 py-4">
                             <div className="flex flex-col gap-4">
-                                <a href="/" className="hover:text-cyan-400 transition py-2">Home</a>
+                                <a href="/" className="hover:text-amber-400 transition py-2">Home</a>
                                 <div className="flex flex-col gap-4">
                                     <p className="font-bold">Solutions</p>
                                     {solutions.map((solution) => (
                                         <a
                                             key={solution.href}
                                             href={solution.href}
-                                            className="flex items-center gap-2 hover:text-cyan-400 transition pl-4"
+                                            className="flex items-center gap-2 hover:text-amber-400 transition pl-4"
                                         >
                                             <solution.icon className="h-4 w-4" />
                                             <span>{solution.text}</span>
                                         </a>
                                     ))}
                                 </div>
-                                <a href="/dealo-tech" className="hover:text-cyan-400 transition py-2">Dealo Tech</a>
-                                <a href="/partnerships" className="hover:text-cyan-400 transition py-2">Partnerships</a>
+                                <a href="/dealo-tech" className="hover:text-amber-400 transition py-2">Dealo Tech</a>
+                                <a href="/partnerships" className="hover:text-amber-400 transition py-2">Partnerships</a>
                                 
                                 {/* Mobile Search */}
                                 <div className="relative mt-4">

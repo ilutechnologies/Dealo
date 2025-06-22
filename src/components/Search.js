@@ -45,7 +45,7 @@ const SearchComponent = () => {
         <input
           type="text"
           placeholder="Search..."
-          className="w-full px-4 py-2 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg placeholder-gray rounded-lg"
+          className="w-full px-4 py-2 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg placeholder-gray rounded-lg"
           value={searchText}
           onChange={handleSearchChange}
           onFocus={handleSearchFocus}

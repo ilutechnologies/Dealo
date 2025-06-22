@@ -8,6 +8,7 @@ import CargoInsurance from './pages/solutions/Cargo';
 import RacingSolutions from './pages/solutions/Racing';
 import Tech from './pages/Tech';
 import Partnerships from './pages/Partnerships';
+import Contact from './pages/Contact';
 
 import './App.css';
 
@@ -37,6 +38,9 @@ function App() {
             </Routes>
             <Routes>
                 <Route path='/partnerships' element={<Partnerships />} />
+            </Routes>
+            <Routes>
+                <Route path='/contact' element={<Contact />} />
             </Routes>
         </Router>
     );
